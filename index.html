@@ -5,131 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cosmin & Oana</title>
 
+<!-- FONTURI -->
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
+  background:#f5f3ee;
   font-family:'Montserrat',sans-serif;
-  background:#f6f4ef;
   color:#222;
   overflow-x:hidden;
 }
 
-/* ===== PLIC ===== */
+/* ================= PLIC ================= */
 #envelope-screen{
   height:100vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
+  flex-direction:column;
+  background:#faf8f4;
 }
 
 .envelope{
-  width:320px;
-  height:210px;
-  background:#b8c8b3;
-  border-radius:10px;
+  width:340px;
+  height:220px;
+  background:url("images/plic.jpg") center/cover no-repeat; /* PLIC */
   position:relative;
+  border-radius:12px;
   cursor:pointer;
-  box-shadow:0 25px 60px rgba(0,0,0,0.3);
-  transition:all 0.8s ease;
-}
-
-.envelope:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:#cdd9c7;
-  clip-path:polygon(0 0,50% 55%,100% 0);
-}
-
-.seal{
-  width:42px;
-  height:42px;
-  background:#fff;
-  border-radius:50%;
-  position:absolute;
-  bottom:18px;
-  left:50%;
-  transform:translateX(-50%);
-  box-shadow:0 5px 10px rgba(0,0,0,0.2);
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+  transition:transform 1s ease, opacity 1s ease;
 }
 
 .open-text{
   margin-top:25px;
+  font-family:'Playfair Display',serif;
   letter-spacing:3px;
-  font-size:16px;
 }
 
-/* ===== INVITAȚIE ===== */
-#invitation{
-  display:none;
-}
+/* ================= INVITATIE ================= */
+#invitation{display:none}
 
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   min-height:100vh;
-  background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-             url('https://images.unsplash.com/photo-1520854221256-17451cc331bf');
-  background-size:cover;
-  background-position:center;
-  color:#f4f2ee;
+  background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("images/acasa.jpg") center/cover no-repeat; /* ACASA */
   display:flex;
-  flex-direction:column;
   justify-content:center;
+  align-items:center;
+  flex-direction:column;
   text-align:center;
-  padding:40px 20px;
+  color:#f3f1ec;
 }
 
 .hero h1{
   font-family:'Great Vibes',cursive;
-  font-size:72px;
+  font-size:78px;
+  margin-bottom:10px;
 }
 
 .hero .date{
-  font-size:24px;
+  font-size:26px;
   font-weight:600;
-  margin-top:15px;
 }
 
 /* COUNTDOWN */
 .countdown{
   display:flex;
-  justify-content:center;
   gap:15px;
-  margin-top:30px;
+  margin-top:35px;
 }
-
 .countdown div{
   background:rgba(0,0,0,.6);
-  padding:12px 16px;
-  border-radius:10px;
+  padding:15px;
+  border-radius:14px;
   min-width:70px;
 }
-
 .countdown span{
   font-size:26px;
   font-weight:600;
 }
 
-/* SECTIONS */
+/* ================= SECTIUNI ================= */
 section{
-  padding:90px 20px;
+  padding:100px 20px;
   max-width:900px;
   margin:auto;
   text-align:center;
 }
 
-.dark{
-  background:#111;
-  color:#fff;
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 1.2s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
 }
 
 h2{
-  font-family:'Playfair Display',serif;
-  font-size:40px;
-  margin-bottom:25px;
+  font-family:'Great Vibes',cursive;
+  font-size:54px;
+  margin-bottom:30px;
 }
 
 p{
@@ -137,45 +119,91 @@ p{
   line-height:1.8;
 }
 
-/* LOCATION */
+/* ================= CINE ================= */
+.dark{
+  background:#0f0f0f;
+  color:#fff;
+}
+
+.name{
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-top:25px;
+}
+
+/* ================= NASI & PARINTI ================= */
+.family{
+  font-family:'Playfair Display',serif;
+  font-size:22px;
+  margin-top:35px;
+}
+
+/* ================= UNDE ================= */
+.location{
+  background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("images/unde.jpg") center/cover no-repeat; /* UNDE */
+  color:#fff;
+}
+
 .map-btn{
   display:inline-block;
   margin-top:25px;
-  padding:14px 30px;
-  background:#7f9f85;
+  padding:15px 32px;
+  background:#8fae96;
   color:#fff;
+  border-radius:40px;
   text-decoration:none;
-  border-radius:30px;
   font-size:18px;
 }
 
-/* RSVP */
-form{
-  background:rgba(0,0,0,.75);
-  padding:35px;
-  border-radius:25px;
-  max-width:500px;
-  margin:auto;
+/* ================= CONFIRMARE ================= */
+.rsvp{
+  background:
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+    url("images/confirmare.jpg") center/cover no-repeat; /* CONFIRMARE */
+  color:#fff;
 }
 
-select,input{
+form{
+  max-width:520px;
+  margin:auto;
+  background:rgba(0,0,0,.6);
+  padding:40px;
+  border-radius:30px;
+}
+
+input,select{
   width:100%;
   padding:14px;
-  margin-bottom:18px;
-  border-radius:12px;
+  margin-bottom:15px;
+  border-radius:14px;
   border:none;
-  font-size:16px;
+}
+
+.menu-group{
+  display:flex;
+  gap:10px;
+}
+.menu-group input{
+  width:60px;
 }
 
 button{
   width:100%;
   padding:16px;
-  background:#1a1a1a;
-  color:#fff;
   border:none;
-  border-radius:30px;
+  border-radius:40px;
+  background:#111;
+  color:#fff;
   font-size:18px;
   cursor:pointer;
+}
+
+.background-text{
+  margin-top:35px;
+  font-size:20px;
+  opacity:.85;
 }
 </style>
 </head>
@@ -184,16 +212,14 @@ button{
 
 <!-- PLIC -->
 <div id="envelope-screen">
-  <div class="envelope" onclick="openInvite()">
-    <div class="seal"></div>
-  </div>
+  <div class="envelope" onclick="openInvite()"></div>
   <div class="open-text">APASĂ PENTRU A DESCHIDE</div>
 </div>
 
-<!-- INVITAȚIA -->
+<!-- INVITATIE -->
 <div id="invitation">
 
-<!-- ACASĂ -->
+<!-- ACASA -->
 <div class="hero">
   <h1>Cosmin & Oana</h1>
   <div class="date"><b>05 Septembrie 2026</b> · ora <b>20:00</b></div>
@@ -207,52 +233,57 @@ button{
 </div>
 
 <!-- CINE -->
-<section class="dark">
+<section class="dark fade">
   <h2>Cine suntem</h2>
-  <p>
-    Cu inimile pline de emoție,<br>
-    vă invităm să ne fiți alături<br>
-    în ziua în care povestea noastră<br>
-    devine „pentru totdeauna”.
-  </p>
+
+  <div class="name">Ea – Oana</div>
+  <p>Dragostea noastră este ca un roman nescris, iar astăzi începem primul capitol împreună.</p>
+
+  <div class="name">El – Cosmin</div>
+  <p>Astăzi nu marcăm doar o zi, ci începutul unei călătorii care ne va umple viețile cu iubire și fericire.</p>
+
+  <div class="family">
+    <b>Nașii</b><br>
+    Andreea & Gabriel<br><br>
+    <b>Părinții</b><br>
+    Firița & Ionică<br>
+    Nadia & Ion
+  </div>
 </section>
 
 <!-- UNDE -->
-<section>
-  <h2>Unde ne întâlnim</h2>
-  <p>
-    Restaurant <b>— nume restaurant —</b><br>
-    Localitate / Adresă
-  </p>
-  <a class="map-btn" href="https://maps.google.com" target="_blank">
-    Vezi locația
-  </a>
+<section class="location fade">
+  <h2>Unde</h2>
+  <p>Restaurant — nume —<br>Localitate</p>
+  <a class="map-btn" href="https://maps.google.com" target="_blank">Vezi locația</a>
 </section>
 
 <!-- CONFIRMARE -->
-<section class="dark">
-  <h2>Confirmare prezență</h2>
-  <p style="font-size:20px;font-weight:600">
-    Vă rugăm să confirmați până la data de <b>20.07.2026</b>
-  </p>
+<section class="rsvp fade">
+  <h2>Confirmare</h2>
 
   <form>
+    <input type="text" placeholder="Nume și prenume" required>
+
     <select required>
-      <option value="">Participi?</option>
-      <option>Da</option>
-      <option>Nu</option>
+      <option>Particip</option>
+      <option>Nu pot participa</option>
     </select>
 
-    <select>
-      <option>Meniu normal</option>
-      <option>Meniu copil</option>
-      <option>Meniu vegan</option>
-    </select>
+    <div class="menu-group">
+      <input type="number" min="0" placeholder="Normal">
+      <input type="number" min="0" placeholder="Vegan">
+      <input type="number" min="0" placeholder="Copil">
+    </div>
 
-    <input type="number" min="1" placeholder="Număr persoane">
-
-    <button>Confirmă</button>
+    <button>Trimite confirmarea</button>
   </form>
+
+  <div class="background-text">
+    Confirmare până pe data de <b>20.07.2026</b><br><br>
+    Vă rugăm să fiți alături de noi la <b>dansul mirilor – ora 21:00</b>,
+    un moment special pe care dorim să îl trăim împreună cu voi.
+  </div>
 </section>
 
 </div>
@@ -262,21 +293,27 @@ function openInvite(){
   document.querySelector('.envelope').style.transform="scale(.6)";
   document.querySelector('.envelope').style.opacity="0";
   setTimeout(()=>{
-    document.getElementById('envelope-screen').style.display="none";
-    document.getElementById('invitation').style.display="block";
-  },700);
+    document.getElementById("envelope-screen").style.display="none";
+    document.getElementById("invitation").style.display="block";
+  },900);
 }
 
 /* COUNTDOWN */
-const weddingDate=new Date("2026-09-05T20:00:00").getTime();
+const wedding=new Date("2026-09-05T20:00:00").getTime();
 setInterval(()=>{
   const now=new Date().getTime();
-  const d=weddingDate-now;
+  const d=wedding-now;
   document.getElementById("d").innerText=Math.floor(d/(1000*60*60*24));
   document.getElementById("h").innerText=Math.floor((d%(1000*60*60*24))/(1000*60*60));
   document.getElementById("m").innerText=Math.floor((d%(1000*60*60))/(1000*60));
   document.getElementById("s").innerText=Math.floor((d%(1000*60))/1000);
 },1000);
+
+/* ANIMATII SCROLL */
+const obs=new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting)el.target.classList.add("show")})
+});
+document.querySelectorAll(".fade").forEach(s=>obs.observe(s));
 </script>
 
 </body>
