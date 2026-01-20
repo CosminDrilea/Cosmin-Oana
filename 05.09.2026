@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmin & Oana – 05.09.2026</title>
+
+<!-- FONT SCRIS DE MÂNĂ -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* MENIU SUS */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75);
+  padding: 12px 0;
+  z-index: 1000;
+  text-align: center;
+}
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* SECTIUNI */
+section {
+  min-height: 100vh;
+  padding: 300px 20px 80px;
+  text-align: center;
+}
+
+/* ================= ACASA ================= */
+#acasa {
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+              url("images/acasa.jpg") center/cover no-repeat;
+  color: #f5f5f0; /* alb murdar */
+}
+
+#acasa h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+#acasa p {
+  font-size: 20px;
+}
+
+#acasa .data {
+  font-size: 26px;
+  font-weight: 700; /* data ingrosata */
+  margin-top: 20px;
+}
+
+/* ================= CINE ================= */
+#cine {
+  background: #000;
+  color: #fff;
+}
+  #cine {
+  background: #000;
+  color: #fff;
+}
+
+.cine-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.cine-block {
+  margin-bottom: 60px;
+}
+
+.cine-decor {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  margin-bottom: 10px;
+  letter-spacing: 4px;
+}
+
+#cine h3 {
+  font-family: 'Montserrat', serif;
+  font-size: 26px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+#cine p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #eaeaea;
+}
+
+.familie {
+  margin-top: 50px;
+}
+
+.familie p {
+  font-size: 21px;
+  margin-bottom: 25px;
+}
+
+.familie strong {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+#cine h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+#cine p {
+  font-size: 22px; /* text mai mare */
+  line-height: 1.8;
+}
+
+/* ================= UNDE ================= */
+#unde {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("images/unde.jpg") center/cover no-repeat;
+  color: #fff;
+}
+
+#unde h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+}
+
+#unde p {
+  font-size: 22px;
+}
+
+.locatie-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px;
+  background: #8fbfa3; /* verde pal */
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+}
+
+/* ================= CONFIRMARE ================= */
+#confirmare {
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url("images/confirmare.jpg") center/cover no-repeat;
+  color: #fff;
+}
+
+#confirmare h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+}
+
+form {
+  max-width: 500px;
+  margin: 40px auto 0;
+  background: rgba(0,0,0,0.75);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #1c1c1c; /* culoare inchisa */
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.confirmare-text {
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 700;
+  background: rgba(0,0,0,0.7);
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#acasa">Acasă</a>
+  <a href="#cine">Cine</a>
+  <a href="#unde">Unde</a>
+  <a href="#confirmare">Confirmare</a>
+</nav>
+
+<section id="acasa">
+  <h1>Cosmin & Oana</h1>
+  <p>Vă așteptăm cu drag alături de noi<br>
+pentru a celebra iubirea și începutul<br>
+unei noi povești împreună.</p>
+  <div class="data">05 Septembrie 2026<br>Ora 20:00</div>
+</section>
+
+<section id="cine">
+  <div class="cine-container">
+
+    <div class="cine-block">
+      <div class="cine-decor">EA</div>
+      <h3>OANA</h3>
+      <p>
+        Dragostea noastră este ca un roman nescris,  
+        iar astăzi începem primul capitol împreună.
+      </p>
+    </div>
+
+    <div class="cine-block">
+      <div class="cine-decor">EL</div>
+      <h3>COSMIN</h3>
+      <p>
+        Astăzi nu marcăm doar o zi,  
+        ci începutul unei călătorii care ne va umple viețile  
+        cu iubire și fericire.
+      </p>
+    </div>
+
+    <div class="familie">
+      <p>
+        <strong>Nașii</strong><br>
+        Andreea & Gabriel Mazăre
+      </p>
+
+      <p>
+        <strong>Părinții</strong><br>
+        Firița & Ionică<br>
+        Nadia & Ion
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="unde">
+  <h2>Evenimentele noastre</h2>
+  <p>Biserica – numele îl completezi tu</p>
+  <a class="locatie-btn" href="#" target="_blank">Vezi pe hartă</a>
+
+  <p style="margin-top:40px;">Pensiunea Sara Focsani</p>
+  <a class="locatie-btn" href="https://www.google.com/maps/place/Pensiunea+Sara/@45.6810143,27.1843426,14z/data=!4m26!1m15!4m14!1m6!1m2!1s0x40b41f48cd217b2f:0xa88c49d2e322fe92!2sPensiunea+Sara,+B-dul+Brailei,+Foc%C8%99ani!2m2!1d27.2062589!2d45.6810088!1m6!1m2!1s0x40b57372786254b5:0x5f889f0e35e249fd!2sdobnar,+C%C4%83prioarei+35,+Bac%C4%83u+607263!2m2!1d26.8659438!2d46.4666237!3m9!1s0x40b41f48cd217b2f:0xa88c49d2e322fe92!5m3!1s2026-01-19!4m1!1i2!8m2!3d45.6809828!4d27.2062253!16s%2Fg%2F12qgzw284?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Vezi pe hartă</a>
+</section>
+
+<section id="confirmare">
+  <h2>Confirmare prezență</h2>
+
+  <form>
+    <input type="text" placeholder="Nume și prenume" required>
+    <select required>
+      <option value="">Participare</option>
+      <option>Da</option>
+      <option>Nu</option>
+    </select>
+    <select>
+      <option>Meniu normal</option>
+      <option>Meniu copii</option>
+      <option>Meniu vegan</option>
+    </select>
+    <button type="submit">Confirmă</button>
+  </form>
+
+  <div class="confirmare-text">
+    Confirmare până la data de 20.07.2026
+    <p style="margin-top:30px;">
+    Vă rugăm să fiți alături de noi la<br>
+    <strong>dansul mirilor – ora 21:30</strong>,<br>
+    un moment special pe care dorim<br>
+    să îl trăim împreună cu voi.</p>
+  </div>
+</section>
+
+</body>
+</html>
