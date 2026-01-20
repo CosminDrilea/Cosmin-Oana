@@ -2,271 +2,186 @@
 <html lang="ro">
 <head>
 <meta charset="UTF-8">
-<title>Cosmin & Oana</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmin & Oana</title>
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #fdf7f0;
-    color: #3b3b3b;
-    scroll-behavior: smooth;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f7f5f2;
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #fff;
-    border-bottom: 1px solid #d8cfc1;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-}
-nav a {
-    display: inline-block;
-    padding: 15px 25px;
-    text-decoration: none;
-    color: #3b3b3b;
-    font-weight: 600;
-    transition: 0.3s;
-}
-nav a:hover {
-    background-color: #3b3b3b;
-    color: #fff;
+/* ===== PLIC ===== */
+#envelope-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-/* CONTAINER */
-.container {
-    max-width: 700px;
-    margin: auto;
-    padding: 100px 20px 40px 20px; /* top padding for navbar */
-    text-align: center;
+.envelope {
+  width: 300px;
+  height: 200px;
+  background: #b7c7b0;
+  position: relative;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 
-/* TITLURI */
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c9d6c2;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+.seal {
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.envelope-text {
+  margin-top: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* ===== INVITATIE ===== */
+#invitation {
+  display: none;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 10px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
 }
+
 h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  margin-bottom: 20px;
 }
-h3 {
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-.divider {
-    width: 80px;
-    height: 1px;
-    background-color: #c1b6a4;
-    margin: 20px auto 30px auto;
-}
+
 p {
-    font-size: 18px;
-    line-height: 1.6;
+  font-size: 20px;
+  line-height: 1.8;
 }
-.date {
-    font-size: 22px;
-    margin: 20px 0;
+
+/* ===== RSVP ===== */
+form {
+  margin-top: 40px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-.event {
-    margin-top: 25px;
+
+select, input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
-.button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 10px 25px;
-    border: 1px solid #3b3b3b;
-    background: none;
-    color: #3b3b3b;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-}
-.button:hover {
-    background-color: #3b3b3b;
-    color: #fff;
-}
-input, select, textarea, button.submit-btn {
-    width: 90%;
-    max-width: 360px;
-    padding: 12px;
-    margin: 10px auto;
-    font-size: 16px;
-    display: block;
-}
-textarea { resize: none; }
-#thankYou {
-    display: none;
-    font-size: 20px;
-    margin-top: 30px;
-    font-weight: bold;
-    color: #3b3b3b;
-}
-.confirmare-finala {
-    margin-top: 50px;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-.footer {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #777;
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #2b2b2b;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
 }
 </style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav>
-<a href="#acasa">Acasă</a>
-<a href="#cine">Cine</a>
-<a href="#unde">Unde</a>
-<a href="#confirmare">Confirmare</a>
-</nav>
-
-<div class="container" id="acasa">
-<h2>Ne căsătorim</h2>
-<h1>Cosmin & Oana</h1>
-<div class="divider"></div>
-<p>
-Cu inimile pline de bucurie,<br>
-vă invităm să fiți alături de noi<br>
-la celebrarea iubirii noastre.
-</p>
-<div class="date">
-5 septembrie 2026<br>
-Ora 20:00
-</div>
+<!-- PLIC -->
+<div id="envelope-screen">
+  <div class="envelope" onclick="openInvite()">
+    <div class="seal"></div>
+  </div>
+  <div class="envelope-text">APASĂ PENTRU A DESCHIDE</div>
 </div>
 
-<div class="container" id="cine">
-<h3>Părinți</h3>
-<p>Firița & Ionică<br>Nadia & Ion</p>
-<div class="divider"></div>
-<h3>Nași</h3>
-<p>Andreea & Gabriel Mazăre</p>
-</div>
+<!-- INVITATIE -->
+<div id="invitation">
 
-<div class="container" id="unde">
-<h3>Evenimentele noastre</h3>
+<section>
+  <h1>Cosmin & Oana</h1>
+  <p>
+    Dragostea noastră este ca un roman nescris,<br>
+    iar astăzi începem primul capitol împreună.
+  </p>
+</section>
 
-<div class="event">
-<p><strong>Cununia religioasă</strong><br>Biserica <strong>[scrii tu]</strong></p>
-<a class="button" href="https://www.google.com/maps?q=LAT_BISERICA,LONG_BISERICA" target="_blank">Vezi locația pe hartă</a>
-</div>
+<section>
+  <h2>05 Septembrie 2026</h2>
+  <p>Ora 20:00</p>
+</section>
 
-<div class="event">
-<p><strong>Petrecerea</strong><br>Restaurant <strong>[Pensiunea Sara Focsani]</strong></p>
-<a class="button" href="https://www.google.com/maps/@45.6809303,27.204498,17z?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Vezi locația pe hartă</a>
-</div>
-</div>
+<section>
+  <h2>Confirmare prezență</h2>
 
-<div class="container" id="confirmare">
-<h3>Confirmare prezență</h3>
+  <form>
+    <select required>
+      <option value="">Participi?</option>
+      <option>Da</option>
+      <option>Nu</option>
+    </select>
 
-<form id="rsvpForm" action="https://formspree.io/f/abcdwxyz" method="POST">
-<input type="text" name="nume" placeholder="Nume și prenume" required>
+    <select>
+      <option>Meniu normal</option>
+      <option>Meniu copil</option>
+      <option>Meniu vegan</option>
+    </select>
 
-<select name="participare" id="participare" required>
-<option value="">Participare</option>
-<option value="Particip">Particip</option>
-<option value="Nu pot participa">Nu pot participa</option>
-</select>
+    <input type="number" min="1" placeholder="Număr persoane">
 
-<select id="total" name="total_persoane" required>
-<option value="">Număr total persoane</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
+    <button type="submit">Confirmă</button>
+  </form>
+</section>
 
-<p>Tip meniu</p>
-
-<select id="normal" name="meniu_normal">
-<option value="0">Meniu normal</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-
-<select id="vegan" name="meniu_vegan">
-<option value="0">Meniu vegan</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-
-<select id="copii" name="meniu_copii">
-<option value="0">Meniu copii</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-</select>
-
-<textarea name="observatii" rows="3" placeholder="Alergii / mențiuni speciale (opțional)"></textarea>
-
-<button type="submit" class="submit-btn button">Trimite confirmarea</button>
-</form>
-
-<div id="thankYou">
-Nu uitați să fiți prezenți la momentul nostru special: dansul mirilor, care va avea loc la ora 21:30.
-Prezența voastră va face ca acest moment să fie cu adevărat magic și de neuitat pentru noi!Mulțumim pentru confirmare! 💛<br>Abia așteptăm să sărbătorim împreună.
-</div>
-
-<div class="divider"></div>
-
-<p class="confirmare-finala">
-Vă rugăm să confirmați până pe data de<br><strong>20.07.2026</strong>
-</p>
-
-<div class="footer">
-Cu drag,<br>Cosmin & Oana
-</div>
 </div>
 
 <script>
-document.getElementById("rsvpForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const total = parseInt(document.getElementById("total").value||0);
-    const normal = parseInt(document.getElementById("normal").value||0);
-    const vegan = parseInt(document.getElementById("vegan").value||0);
-    const copii = parseInt(document.getElementById("copii").value||0);
-
-    if(normal + vegan + copii !== total){
-        alert("Numărul meniurilor trebuie să fie egal cu numărul total de persoane.");
-        return;
-    }
-
-    fetch(this.action,{
-        method:"POST",
-        body:new FormData(this),
-        headers:{'Accept':'application/json'}
-    }).then(response=>{
-        if(response.ok){
-            this.style.display="none";
-            document.getElementById("thankYou").style.display="block";
-        } else {
-            alert("A apărut o eroare. Te rugăm să încerci din nou.");
-        }
-    });
-});
+function openInvite() {
+  document.querySelector('.envelope').style.transform = "scale(0.7)";
+  document.querySelector('.envelope').style.opacity = "0";
+  setTimeout(() => {
+    document.getElementById('envelope-screen').style.display = "none";
+    document.getElementById('invitation').style.display = "block";
+    window.scrollTo(0,0);
+  }, 600);
+}
 </script>
 
 </body>
